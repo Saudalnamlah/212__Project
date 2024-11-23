@@ -1,0 +1,54 @@
+################### Boolean Retrieval ####################
+
+# Q: market AND sports
+Result doc IDs: {41}
+
+# Q: weather AND warming
+Result: {34}
+
+# Q: business AND world
+Result: {8}
+
+# Q: weather OR warming
+Result: {2, 34, 18, 38, 30, 46, 14}
+
+Q: market OR sports
+Result: {0, 33, 34, 41, 9, 12, 45, 17, 49, 21, 25, 29}
+
+Q: market OR sports AND warming .... AND has a higher precedence than OR
+Result: {0, 41, 34, 12}
+
+################## Ranked Retrieval ###########################
+## Q: market sports
+DocID	Score
+33    2
+41    2
+0     1
+9     1
+12    1
+17    1
+21    1
+25    1
+29    1
+34    1
+45    1
+49    1
+
+## Q: weather warming
+DocID	Score
+34    2
+2     1
+14    1
+18    1
+30    1
+38    1
+46    1
+
+## Q: business world market
+DocID	Score
+8     2
+0     1
+12    1
+21    1
+41    1
+44    1
